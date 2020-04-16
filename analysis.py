@@ -9,6 +9,6 @@ attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "cla
 df.columns = attributes
 
 desc = df.describe()
-print(df.head() ,file = open("Summary File", "a"))
-print(desc ,file = open("Summary File", "a"))
+print(df.head() ,file = open("Summary File.txt", "a"))
+print(desc ,file = open("Summary File.txt", "a"))
 
