@@ -19,30 +19,48 @@ attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "cla
 df.columns = attributes
 
 
-
+import numpy as np
 import matplotlib.pyplot as plt
-plt.hist(df["sepal_length"])
-plt.title ("Sepal Length")
+import pandas
+
+#plt.hist(df["sepal_length"])
+plt.title ("Sepal Length in cm")
+x = df["sepal_length"]
+plt.hist( x, bins = 20, color = "green") 
+plt.xlabel("Sepal_Length_cm") 
+plt.ylabel("Count")
 plt.savefig ("sepal_length.png")
 plt.clf()
 
-plt.hist(df["sepal_width"])
-plt.title ("Sepal Width")
+#plt.hist(df["sepal_width"])
+plt.title ("Sepal Width in cm")
+x = df["sepal_Width"]
+plt.hist( x, bins = 20, color = "green") 
+plt.xlabel("Sepal_Width_cm") 
+plt.ylabel("Count")
 plt.savefig ("sepal_width.png")
 plt.clf()
 
-plt.hist(df["petal_length"])
-plt.title ("Petal Length")
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas
+
+
+#plt.hist(df["petal_length"])
+plt.title ("Petal Length in cm")
+x = df["petal_length"]
+plt.hist( x, bins = 20,color = "green") 
+plt.xlabel("petal_length_cm") 
+plt.ylabel("Count")
 plt.savefig ("petal_length.png")
 plt.clf()
 
-plt.hist(df["petal_width"])
-plt.title ("Petal Width")
+#plt.hist(df["petal_width"])
+plt.title ("petal width")
+x = df["petal_width"]
+plt.hist( x,bins = 20, color = "green") 
+plt.xlabel("petal_width_cm") 
+plt.ylabel("Count")
 plt.savefig ("petal_width.png")
 plt.clf()
 
-import seaborn as sns
-sns.set(style="ticks")
-
-df = sns.load_dataset("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
-sns.pairplot(df, hue="species")
