@@ -23,19 +23,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas
 
-#plt.hist(df["sepal_length"])
+
 plt.title ("Sepal Length in cm")
 x = df["sepal_length"]
-plt.hist( x, bins = 20, color = "green") 
+plt.hist( x, bins = 20, color = "green", edgecolor="black") 
 plt.xlabel("Sepal_Length_cm") 
 plt.ylabel("Count")
 plt.savefig ("sepal_length.png")
 plt.clf()
 
-#plt.hist(df["sepal_width"])
+
 plt.title ("Sepal Width in cm")
-x = df["sepal_Width"]
-plt.hist( x, bins = 20, color = "green") 
+x = df["sepal_width"]
+plt.hist( x, bins = 20, color = "green", edgecolor="black") 
 plt.xlabel("Sepal_Width_cm") 
 plt.ylabel("Count")
 plt.savefig ("sepal_width.png")
@@ -46,19 +46,19 @@ import matplotlib.pyplot as plt
 import pandas
 
 
-#plt.hist(df["petal_length"])
+
 plt.title ("Petal Length in cm")
 x = df["petal_length"]
-plt.hist( x, bins = 20,color = "green") 
+plt.hist( x, bins = 20,color = "green", edgecolor="black") 
 plt.xlabel("petal_length_cm") 
 plt.ylabel("Count")
 plt.savefig ("petal_length.png")
 plt.clf()
 
-#plt.hist(df["petal_width"])
+
 plt.title ("petal width")
 x = df["petal_width"]
-plt.hist( x,bins = 20, color = "green") 
+plt.hist( x,bins = 20, color = "green", edgecolor="black") 
 plt.xlabel("petal_width_cm") 
 plt.ylabel("Count")
 plt.savefig ("petal_width.png")
