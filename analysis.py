@@ -49,7 +49,8 @@ import pandas
 
 plt.title ("Petal Length in cm")
 x = df["petal_length"]
-plt.hist( x, bins = 20,color = "green", edgecolor="black") 
+plt.hist( x, bins = 20,color = "green", edgecolor="black")
+plt.legend
 plt.xlabel("petal_length_cm") 
 plt.ylabel("Count")
 plt.savefig ("petal_length.png")
@@ -64,3 +65,21 @@ plt.ylabel("Count")
 plt.savefig ("petal_width.png")
 plt.clf()
 
+import seaborn as sns
+sns.FacetGrid(df,hue="species").map(sns.distplot,'petal_length').add_legend()
+plt.show()
+
+sns.FacetGrid(df,hue="species").map(sns.distplot,'petal_width').add_legend()
+plt.show()
+
+sns.FacetGrid(df,hue="species").map(sns.distplot,'sepal_width').add_legend()
+plt.show()
+
+sns.FacetGrid(df,hue="species").map(sns.distplot,'sepal_length').add_legend()
+plt.show()
+
+
+import seaborn as sns
+sns.set(style="ticks")
+df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
+sns.pairplot(df,hue='species')
