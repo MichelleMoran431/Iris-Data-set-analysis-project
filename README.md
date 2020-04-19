@@ -3,6 +3,11 @@
 
 ##1. The Iris Data Set##
 
+References : 
+
+http://archive.ics.uci.edu/ml/datasets/iris
+https://en.wikipedia.org/wiki/Iris_flower_data_set
+
 ###Background###
 
 The Iris flower data set is an example of a multivariate data set developed by the British statistician and biologist Ronald Fisher using data collected by Edgar Anderson, an american biologist.
@@ -10,13 +15,13 @@ Fisher developed a linear discrimnant model to distinguish between the species o
 
 ###The Data Set###
 
-The data set consists of 50 samples of each class of Iris : 
+The data set consists of 50 samples of each class of Iris, 150 rows and 4 columns of data : 
 
 Data Set Class and Attributes details:
 
 1. Class
     *Iris Setosa
-    *Iris Versicolcm
+    *Iris Versicolor
     *Iris Virginica
 2. Attributes
     *sepal length in cm
@@ -24,15 +29,15 @@ Data Set Class and Attributes details:
     *petal length in cm
     *petal width in 
 
-https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-flower-dataset-a21c368a1f4
 
 
-2. Download the data set and add it to the Repository:
+####Download the data set and add it to a Repository####
 
-Data set downloaded from the UCI - Machine Learning Repository, center for machine learning and intelligent systems
+GITHUB URL : https://github.com/g00387856/Iris-Data-set-analysis-project.git
 
-Reference : http://archive.ics.uci.edu/ml/datasets/iris 
-            https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x - Fishers Original Paper
+Data set downloaded from the UCI - Machine Learning Repository, center for machine learning and intelligent systems. It is saved as a txt.file called Irisdataset.txt , an example of a CSV file.
+
+
             
 3. Write a Program called analysis.py to do the follow : 
   
