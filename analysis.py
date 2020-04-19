@@ -1,10 +1,10 @@
-
+import csv
 
 #Using Pandas module for data importing of CSV file and data manipulation
 import pandas
 
-df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
-attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "class"]
+df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project")
+attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "class"] 
 df.columns = attributes
 
 #describe() Function gives the mean, std and IQR values. It excludes character column and calculate summary statistics only for numeric columns
