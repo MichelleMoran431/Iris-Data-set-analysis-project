@@ -1,7 +1,6 @@
 
-import csv
 
-
+#Using Pandas module for data importing of CSV file and data manipulation
 import pandas
 
 df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
@@ -10,20 +9,23 @@ df.columns = attributes
 
 #describe() Function gives the mean, std and IQR values. It excludes character column and calculate summary statistics only for numeric columns
 desc = df.describe()
+#df.head() = Returns the first 5 rows of the dataframe
 print(df.head() ,file = open("Summary File.txt", "a"))
 print(desc ,file = open("Summary File.txt", "a"))
 
+# using for plotting /visualising data in python
 import matplotlib.pyplot as plt
 df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
+#Adding column headings to the dataframes via attributes
 attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "class"]
 df.columns = attributes
 
 
-import numpy as np
+#import numpy as np
 import matplotlib.pyplot as plt
 import pandas
 
-
+#Histograms for each variable of the Iris data set 
 plt.title ("Sepal Length in cm")
 x = df["sepal_length"]
 plt.hist( x, bins = 20, color = "green", edgecolor="black") 
@@ -65,6 +67,8 @@ plt.ylabel("Count")
 plt.savefig ("petal_width.png")
 plt.clf()
 
+
+#Using Seaborn module to better represent the Iris data set in histograms
 import seaborn as sns
 sns.FacetGrid(df,hue="species").map(sns.distplot,'petal_length').add_legend()
 plt.show()
@@ -78,7 +82,7 @@ plt.show()
 sns.FacetGrid(df,hue="species").map(sns.distplot,'sepal_length').add_legend()
 plt.show()
 
-
+#Using Seaborn module to give a scatterplot representation of the variables in pairs using pairplot
 import seaborn as sns
 sns.set(style="ticks")
 df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")

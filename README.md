@@ -1,16 +1,30 @@
 # Iris-Data-set-analysis-project
-Programming and Scripting Project 2020
-Aim : To complete the following  by breaking them into several smaller tasks that are easier to solve and combining together once completed
-  -Research the data set online and write a summary in this Readme file.
-  -Download the data set and add it to this repository
-  - Write a program called analysis.py that: 
-    - outputs a summary of each variable to a single text file
-    - save a histogramof each variable to png files
-    - outputs a scatter plot of each pair of variables
+#Programming and Scripting Project 2020#
 
+##1. The Iris Data Set##
 
-1. The Iris Data Set
+###Background###
 
+The Iris flower data set is an example of a multivariate data set developed by the British statistician and biologist Ronald Fisher using data collected by Edgar Anderson, an american biologist.
+Fisher developed a linear discrimnant model to distinguish between the species of Iris.
+
+###The Data Set###
+
+The data set consists of 50 samples of each class of Iris : 
+
+Data Set Class and Attributes details:
+
+1. Class
+    *Iris Setosa
+    *Iris Versicolcm
+    *Iris Virginica
+2. Attributes
+    *sepal length in cm
+    *sepal width in cm
+    *petal length in cm
+    *petal width in 
+
+https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-flower-dataset-a21c368a1f4
 
 
 2. Download the data set and add it to the Repository:
