@@ -1,35 +1,31 @@
 # Iris-Data-set-analysis-project
 #Programming and Scripting Project 2020#
-
 ##1. The Iris Data Set##
-
-References : 
-
+References :
 http://archive.ics.uci.edu/ml/datasets/iris
 https://en.wikipedia.org/wiki/Iris_flower_data_set
-
 ###Background###
-
 The Iris flower data set is an example of a multivariate data set developed by the British statistician and biologist Ronald Fisher using data collected by Edgar Anderson, an american biologist.
 Fisher developed a linear discrimnant model to distinguish between the species of Iris.
-
 ###The Data Set###
-
-The data set consists of 50 samples of each class of Iris, 150 rows and 4 columns of data : 
-
+The data set consists of 50 samples of each class of Iris, 150 rows and 4 columns of data :
 Data Set Class and Attributes details:
+ Class
+*Iris Setosa
 
-1. Class
-    *Iris Setosa
-    *Iris Versicolor
-    *Iris Virginica
-2. Attributes
-    *sepal length in cm
-    *sepal width in cm
-    *petal length in cm
-    *petal width in 
+*Iris Versicolor
 
+*Iris Virginica
 
+ - [
+] Attributes
+   *sepal length in cm
+   
+   *sepal width in cm
+   
+   *petal length in cm
+   
+   *petal width in cm
 
 ####Download the data set and add it to a Repository####
 
@@ -37,21 +33,17 @@ GITHUB URL : https://github.com/g00387856/Iris-Data-set-analysis-project.git
 
 Data set downloaded from the UCI - Machine Learning Repository, center for machine learning and intelligent systems. It is saved as a txt.file called Irisdataset.txt , an example of a CSV file.
 
-
-<<<<<<< HEAD
-=======
 Reference : http://archive.ics.uci.edu/ml/datasets/iris 
-            https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x - Fishers Original Paper
-            https://gist.github.com/curran/a08a1080b88344b0c8a7
->>>>>>> 4689637d0f794bdca94c3b1c1b190511f68d38dd
             
-3. Write a Program called analysis.py to do the follow : 
+            
+##Write a Program called analysis.py to do the follow :## 
   
     1. -  **Outputs a summary of each variable to a single text file**
     
-      1.1  - Import modules : **CSV and Pandas** - Using Pandas to call up "Irisdataset.txt" from desktop folder. 
-          Create a df ( dataframe) - associating data from the Irisdataset.txt
-          Pandas is used for working with tabular data e.g. CSV files , by creating dataframes. 
+      1.1  - Import modules : **CSV and Pandas**
+          
+          Using Pandas module to call up "Irisdataset.txt" from desktop folder and create a dataframe called Irisdataset.txt 
+          Pandas is used for working with tabular data e.g. CSV files , by creating dataframes which can be viewed in python. 
           
       1.2  - Identify the column headings and add the columns headings as attributes to the dataframe (df)
       1.3 -  Using the **describe()** to give a statistical summary output for each variable -
