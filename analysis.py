@@ -18,6 +18,7 @@ df.columns = attributes
 desc = df.describe()
 head  = df.head ()
 info  = df.info
+#print(df.describe())
 
 # output the results to a text file
 df = open("SummaryA.txt", "w")
@@ -41,13 +42,14 @@ attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "spe
 df.columns = attributes
 
 
+# Version no. 1 Histograms for each variable of the Iris data set using following modules
 
+#References : https://www.machinelearningplus.com/plots/matplotlib-histogram-python-examples/
 import matplotlib.pyplot as plt
 import pandas
 import numpy as np
-from matplotlib.patches import Rectangle
+from matplotlib.patches import Rectangle 
 
-#Histograms for each variable of the Iris data set 
 df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
 attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "species"]
 df.columns = attributes
@@ -84,11 +86,6 @@ plt.ylabel("Count")
 plt.savefig ("sepal_width version 1.png")
 plt.clf()
 
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas
-
-
 
 plt.title ("Petal Length in cm")
 x1= df.loc[df.species == 'setosa','petal_length']
@@ -122,7 +119,7 @@ plt.savefig ("petal_width version 1.png")
 plt.clf()
 
 
-#Using Seaborn module to better represent the Iris data set in histograms
+# Version 2 : Histograms created using Seaborn module to better represent the Iris data set 
 import seaborn as sns
 sns.FacetGrid(df,hue="species").map(sns.distplot,'petal_length').add_legend()
 
