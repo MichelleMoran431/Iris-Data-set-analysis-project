@@ -32,7 +32,6 @@ I hope to break this project into several smaller tasks as follows :
 *   Create a **histogram** of each variable to png files
 *   To output a **scatter plot** of each pair of variables
 
-•	Moodle page - internal college site used to access class notes and videos
 
 
 #### **1.2  Background**[1,2,3,4,5]
@@ -76,7 +75,8 @@ Some advantages of using the Iris flower dataset is :
 
 * Attributes are numeric 
 * It is a classification problem, allowing you to practice with perhaps an easier type of supervised learning algorithm.
-* It only has 4 attributes and 150 rows, meaning it is small and easily fits into memory (and a screen or A4 page).
+* It only has 4 attributes and 150 rows, meaning it is small and easily fits into memory 
+
 * All of the numeric attributes are in the same units and the same scale, 
 
 **1.3 Download the data set and add it to a Repository**[1,6,7]
@@ -91,14 +91,29 @@ Some advantages of using the Iris flower dataset is :
 				df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
 				attributes = ["sepal_length", "sepal_width", "petal_length", "petal_width", "species"]
 				df.columns = attributes
-* Pandas is also used to investigate the data through summary statistics and data visualisation via matplotlib and seaborn modules.
+* Pandas is also used to investigate the data through summary statistics and data visualisation via matplotlib.pyplot and seaborn modules.
             
        
 														 
 #### 1.4 To output a summary of each variable to a single text file [12,13,14]:
 
+Descriptive statistics is describing and summarizing data through quantitative and visual approach. In terms of the Iris Flower Data set : 
 
-*  Using Pandas **describe()** to view statistical details like percentile, mean, std etc. for each variable -
+* The quantitative approach will use the python statistical library and Pandas. There are other libraries that can be utilised such as Numpy and Sci-py but for this project Pandas will be used. Pandas is based on Numpy and it looks at data though series or dataset objects. 
+* The visual approach will use Matplotlib.pyplot library which works well with the above libraries
+
+*  Using Pandas library , the function **describe()** is used to view statistical details like mean, std etc. for each variable in the dataset . I included **Perc** to give the percentiles and **include** to include all the data types.
+
+Input :
+
+					perc =[.20,.40,.60,.80]
+					include = ['object','float','int']
+					desc = df.describe(percentiles = perc, include = include)
+					head  = df.head ()
+					info  = df.info
+					
+					
+Example of Output :
       
 |       | sepal_length | sepal_width | petal_length | petal_width |
 |-------|:------------:|------------:|--------------|-------------|
@@ -111,31 +126,37 @@ Some advantages of using the Iris flower dataset is :
 | 75%   |   6.400000   |   3.300000  |   5.100000   |   1.800000  |
 | max   |   7.900000   |   4.400000  |   6.900000   |   2.500000  |
 
+
+
+
 * Using **print(df.head())** - Returns the first 5 rows of the dataframe ( however you can input any no. in the parenthesis not just  5)
     
 * To output the summary as a single text file , I used the following code : 
+					
+The code below opens the file ( given  name in the parenthesis) and then pass the variables through the print's file option, I used "w" to overwrite the file everytime the code is ran so not to accumulate results everytime the program is ran
 
-						desc = df.describe()
-						head  = df.head ()
-						info  = df.info
+The output is printed  to a txt. file called "Summary File". 
 
-						df = open("SummaryA.txt", "w")
-						print(desc,file = df)
-						print(head,file = df)
-						print(info,file = df)
+					
+Input :				
+					df = open("Summary.txt", "w")
+					print(desc,file = df)
+					print(head,file = df)
+					print(info,file = df) 
+					
+Output : " Summary file"
 
-Where I defined describe / head / info in terms of the dataframe (df) and then I opened the file ( given it name in the parenthesis) and then passed that variable to print's file option, I used "w" to overwrite the file everytime the code is ran.
-Prints the outputs which is the summary results to a txt. file called "SummaryA File". 
+**Conclusions about Iris Flower data Set from the summary file :** 
 
-Conclusions about Iris Flower data Set from the summary file : 
-
-The sepal length measurements gives the largest range difference of all species of 5.9cm between the min 1.0 - max 6.9 .This would be the category that covers the largest range of the data.The other categories range is as follows: Petal Length - 3.6cm Petal Width - 2.4cm Sepal Width - 2.4cm
+ The summary file containing statisticial data of the dataset doesnt not really tell us about the distribution of the results which is why data visualisation is important. 
+	 
+The range of results : Petal length data has the greatest range , difference being 5.9 however it doesnt tell us about the distribution of results. This can be said for the mean of the data 
 
 
 #### 1.5   Data Visualisation
 
 
-##### **1.5.1 Univariate plots :Histogram of each variable ** [14,15,16,17,18]**
+**1.5.1 Univariate plots :Histogram of each variable ** [14,15,16,17,18]**
 
 
 Aim :To better understand each attribute.
@@ -193,7 +214,8 @@ Plotting the Histogram & PDF using Seaborn FacetGrid object —
 FacetGrid object takes the dataframe as input and the names of the variables that will form the row, column, or hue dimensions of the grid.
 Distribution plots in seaborn are used to visually assess how the data points are distributed with respect to its frequency.Histograms and KDE can be combined using distplot.
 
-Definition :
+**Definition :**
+
 * Kernel Density Estimate (KDE) is the way to estimate the PDF. The area under the KDE curve is 1.
 
 An advantage to using Seaborn here is it uses alot less coding and interacts directly with dataframe . 
@@ -202,35 +224,45 @@ An advantage to using Seaborn here is it uses alot less coding and interacts dir
 					sns.FacetGrid(df,hue="species").map(sns.distplot,'petal_width').add_legend()
 					sns.FacetGrid(df,hue="species").map(sns.distplot,'sepal_width').add_legend()
 					sns.FacetGrid(df,hue="species").map(sns.distplot,'sepal_length').add_legend()
+					
+					
+					
+![](https://miro.medium.com/max/1106/1*AnGVVtk9pEuMl_uiwcPIyQ.png)		
 	
-Conclusions 
+Conclusion: 
 
-Examining version 1 Histograms ( created using matplotlib )  you can conclude that there the variables Petal length and width data could be used to distinguish the species Setosa clearly from the others species. 
+Examining version 1 Histograms ( created using matplotlib.pyplot )  you can conclude that there the variables Petal length and width data could be used to distinguish the species Setosa clearly from the others species. 
 However looking at histogram plots created by seaborn as sns , version 2 , the density plots of the petal width show there is a small overlapping between species setosa and versicolor. So overall petal length can be used to distinguish the species Setosa . Looking at the actual figures for petal length with regards Versicolor and Virginica species , the overlapping occurs at around 4.8 cm, but the majority of versicolor have petal length less than 4.8 whereas the majority of virginica have petal length greater than 4.8. Again because of the overlapping there is still a chance of misidentification.
 
 
 
-![](https://miro.medium.com/max/1106/1*AnGVVtk9pEuMl_uiwcPIyQ.png)
-
-
-1.5.2 Multivariate Plots  :Scatter plot of each pair of variables ** []**
+**1.5.2 Multivariate Plots  :Scatter plot of each pair of variables** ** []**
 
 **Import seaborn as sns**
 
 The pairs plot builds on the histogram and the scatter plot. The histogram on the diagonal allows us to see the distribution of a single variable while the scatter plots on the upper and lower triangles show the relationship (or lack thereof) between two variables. 
+
+It gives us a representation of where each point in the entire dataset are present with respect to any 2 or 3 features (or columns)
 		 
 			import seaborn as sns
 			sns.set(style="ticks")
 			df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
 			sns.pairplot(df,hue='species')
 			
-
-
-
 ![](https://miro.medium.com/max/1400/1*v34h7DKNcw74qtQxjpHUbA.png)
 			
-			
 
+Conclusion:[19]
+
+As with previous conclusions - from the distributions we can see petal length is separating the iris setosa from remaining species .
+But from plot between petal length and petal width , the flowers can be separated 
+
+
+"if 0≤petal_length≤2 and 0≤petal_width≤0.7then setosa
+if 2≤petal_lenght≤5.2 and 1≤petal_length≤1.7 then versicolor and
+else virginica" 
+
+But there is a slight overlapping between Versicolor and virginica observed.
 
 
 
@@ -257,5 +289,6 @@ The pairs plot builds on the histogram and the scatter plot. The histogram on th
 [16]https://www.machinelearningplus.com/plots/matplotlib-histogram-python-examples
 [17]https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
 [18]https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
+[19]https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
 
 														 
