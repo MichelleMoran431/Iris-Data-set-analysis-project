@@ -137,7 +137,7 @@ The code below opens the file ( given  name in the parenthesis) and then pass th
 
 The output is printed  to a txt. file called "Summary File". 
 
-					
+	df = open("Summary.txt", "w") print(desc,file = df) print(head,file = df) print(info,file = df)				
 Input :				
 					df = open("Summary.txt", "w")
 					print(desc,file = df)
@@ -145,6 +145,7 @@ Input :
 					print(info,file = df) 
 					
 Output : " Summary file"
+
 
 **Conclusions about Iris Flower data Set from the summary file :** 
 
