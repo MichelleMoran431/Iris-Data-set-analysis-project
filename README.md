@@ -135,13 +135,21 @@ The sepal length measurements gives the largest range difference of all species 
 #### 1.5   Data Visualisation
 
 
-##### **1.5.1 Univariate plots :Histogram of each variable ** [14,15,16]**
+##### **1.5.1 Univariate plots :Histogram of each variable ** [14,15,16,17,18]**
 
 
 Aim :To better understand each attribute.
 
-A Histogram is is a visual tool for quickly assessing the probability distribution ( or PDF - Probability density function). 
 For the IRIS dataset - we need the histogram to answer the following question :Which among the four variables is more useful than other variables in order to distinguish between the species of Iris flower ? 
+
+A Histogram is is a visual tool for quickly assessing the probability distribution ( or PDF - Probability density function).
+
+
+Definitions :
+
+* Probability Density Function (PDF) is the probability that the variable takes a value x. (smoothed version of the histogram)
+* Kernel Density Estimate (KDE) is the way to estimate the PDF. The area under the KDE curve is 1.
+
 
 Two methods of creating histograms investigated:
 
@@ -150,6 +158,7 @@ Version 2 : Using Seaborn package
 
 
 **Version 1:**
+
 Import module **matplotlib.pyplot as plt** and **Pandas**
 
 Below is the code used to create a histogram  for each of the attributes ( input each variable)  . These histograms  distinguishes between the species for each attribute. All histograms are saved as a .png file. Version 1 coding is long winded and labour intensive between having to associate the attribute with its species and making the plot more aesthetically pleasing to the eye. 
@@ -173,14 +182,21 @@ Below is the code used to create a histogram  for each of the attributes ( input
      
   **Version 2:**
 	
-	Import module **Seaborn **
+Import module **Seaborn as sns**
 	
-	we will plot the probability density function(PDF) with each feature as a variable on X-axis and it’s histogram and corresponding kernel density plot on Y-axis
-	Plotting the Histogram & PDF using Seaborn FacetGrid object —
-	FacetGrid object takes a dataframe as input and the names of the variables that will form the row, column, or hue dimensions of the grid.
-	Histograms and KDE can be combined using distplot:
+	
+	
+By using Seaborn , we can plot the probability density function(PDF) with each feature as a variable on X-axis and it’s histogram and corresponding kernel density plot on Y-axis
 
-The variables should be categorical and the data at each level of the variable will be used for a facet along that axis.
+Plotting the Histogram & PDF using Seaborn FacetGrid object —
+
+FacetGrid object takes the dataframe as input and the names of the variables that will form the row, column, or hue dimensions of the grid.
+Distribution plots in seaborn are used to visually assess how the data points are distributed with respect to its frequency.Histograms and KDE can be combined using distplot.
+
+Definition :
+* Kernel Density Estimate (KDE) is the way to estimate the PDF. The area under the KDE curve is 1.
+
+An advantage to using Seaborn here is it uses alot less coding and interacts directly with dataframe . 
 	
 					sns.FacetGrid(df,hue="species").map(sns.distplot,'petal_length').add_legend()
 					sns.FacetGrid(df,hue="species").map(sns.distplot,'petal_width').add_legend()
@@ -189,17 +205,38 @@ The variables should be categorical and the data at each level of the variable w
 	
 Conclusions 
 
-A histogram provides a more accurate depiction by showing a visual breakdown of where the data lies.
+Examining version 1 Histograms ( created using matplotlib )  you can conclude that there the variables Petal length and width data could be used to distinguish the species Setosa clearly from the others species. 
+However looking at histogram plots created by seaborn as sns , version 2 , the density plots of the petal width show there is a small overlapping between species setosa and versicolor. So overall petal length can be used to distinguish the species Setosa . Looking at the actual figures for petal length with regards Versicolor and Virginica species , the overlapping occurs at around 4.8 cm, but the majority of versicolor have petal length less than 4.8 whereas the majority of virginica have petal length greater than 4.8. Again because of the overlapping there is still a chance of misidentification.
 
-		 
-		 1.5.2 Multivariate Plots  :Scatter plot of each pair of variables ** []**
-		 
-		 
-		 look at the interactions between the variables.
 
-First, let’s look at scatterplots of all pairs of attributes. This can be helpful to spot structured relationships between input variables.
 
-Note the diagonal grouping of some pairs of attributes. This suggests a high correlation and a predictable relationship.
+![](https://miro.medium.com/max/1106/1*AnGVVtk9pEuMl_uiwcPIyQ.png)
+
+
+1.5.2 Multivariate Plots  :Scatter plot of each pair of variables ** []**
+
+**Import seaborn as sns**
+
+The pairs plot builds on the histogram and the scatter plot. The histogram on the diagonal allows us to see the distribution of a single variable while the scatter plots on the upper and lower triangles show the relationship (or lack thereof) between two variables. 
+		 
+			import seaborn as sns
+			sns.set(style="ticks")
+			df = pandas.read_csv("C:\\Users\\User\\Desktop\\Iris-Data-set-analysis-project\\Irisdataset.txt")
+			sns.pairplot(df,hue='species')
+			
+
+
+
+![](https://miro.medium.com/max/1400/1*v34h7DKNcw74qtQxjpHUbA.png)
+			
+			
+
+
+
+
+
+
+
 		 
 ##     ***References* **:
 [1] http://archive.ics.uci.edu/ml/datasets/iris
@@ -219,4 +256,6 @@ Note the diagonal grouping of some pairs of attributes. This suggests a high cor
 [15]http://www.datasciencemadesimple.com/histogram-in-python-using-matplotlib/
 [16]https://www.machinelearningplus.com/plots/matplotlib-histogram-python-examples
 [17]https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
+[18]https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
+
 														 
