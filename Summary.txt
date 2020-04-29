@@ -36,3 +36,5 @@ max         7.900000  ...      NaN
 149           5.9  ...  virginica
 
 [150 rows x 5 columns]>
+[0.2, 0.4, 0.6, 0.8]
+['object', 'float', 'int']

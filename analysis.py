@@ -1,5 +1,4 @@
-import csv
-import numpy
+
 
 #Using Pandas module for data importing of CSV file and data manipulation
 #Reference **: https://gist.github.com/curran/a08a1080b88344b0c8a7
@@ -8,6 +7,7 @@ import numpy
             #https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
 
 #Use pandas to load the data and examine the data through descriptive statistics and data visualization.
+import csv
 import pandas
 import numpy
 
@@ -31,8 +31,8 @@ df = open("Summary.txt", "w")
 print(desc,file = df)
 print(head,file = df)
 print(info,file = df)
-
-
+print (perc,file =df)
+print (include, file =df)
 
 
 #References : https://realpython.com/python-histograms/#building-up-from-the-base-histogram-calculations-in-numpy
@@ -128,8 +128,7 @@ plt.clf()
 
 #Reference:https://www.machinelearningplus.com/plots/matplotlib-histogram-python-examples/
 
-# Version 2 : Histograms created using Seaborn module to better represent the Iris data set 
-
+# Version 2 : Histograms created using Seaborn module to better represent the Iris data se
 import seaborn as sns
 sns.FacetGrid(df,hue="species").map(sns.distplot,'petal_length').add_legend()
 

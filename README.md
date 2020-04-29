@@ -34,7 +34,7 @@ I hope to break this project into several smaller tasks as follows :
 
 
 
-#### **1.2  Background**[1,2,3,4,5]
+#### **1.2  Background**[1,2,3,4,5,20]
 
 The Iris flower data set is an example of a multivariate data set developed by the British statistician and biologist Ronald Fisher using data collected by Edgar Anderson, an american biologist.Fisher developed a linear discrimnant model to distinguish between the species of Iris.
 
@@ -64,7 +64,7 @@ Here are the three Classes of Iris examined :
 
 ![](https://cdn-images-1.medium.com/max/1000/1*gwmXliaxIBkY4NQBhoe9JQ.png)
 
-This particular data set is good example of how  to classify iris flowers among three species (setosa, versicolor or virginica) from measurements of length and width of sepals and petals .This is a widely used dataset by everyone trying to learn machine learning and statistics.
+This particular data set is good example of how  to try to classify iris flowers among three species (setosa, versicolor or virginica) from measurements of length and width of sepals and petals .This is a widely used dataset by everyone trying to learn machine learning and statistics.
 Machine learning can be defined as
 
 *"Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. Machine learning focuses on the development of computer programs that can access data and use it learn for themselves"* 
@@ -206,12 +206,13 @@ Import module **Seaborn as sns**
 	
 	
 	
-By using Seaborn , we can plot the probability density function(PDF) with each feature as a variable on X-axis and it’s histogram and corresponding kernel density plot on Y-axis
+By using Seaborn , we can plot the probability density function(PDF) with each feature as a variable on X-axis and it’s histogram and corresponding kernel density plot on Y-axis using one line of code. Which is more efficient. 
 
 Plotting the Histogram & PDF using Seaborn FacetGrid object —
 
-FacetGrid object takes the dataframe as input and the names of the variables that will form the row, column, or hue dimensions of the grid.
-Distribution plots in seaborn are used to visually assess how the data points are distributed with respect to its frequency.Histograms and KDE can be combined using distplot.
+FacetGrid object takes the dataframe (df) as input and the names of the variables that will form the row, column, or hue dimensions of the grid.
+The hue parameter determines which column in the data frame should be used for colour encoding
+Distribution plots in seaborn are used to visually assess how the data points are distributed with respect to how often it occurs.Histograms and KDE can be combined using distplot.
 
 **Definition :**
 
@@ -232,12 +233,12 @@ Conclusion:
 
 To answer the question posed : Which variable is most useful in distinguishing between the species ?
 
-Well on examining version 1 Histograms ( created using matplotlib.pyplot )  you can conclude that there the variables Petal length and width data could be used to distinguish the species Setosa clearly from the others species with petal length the only variable that is completedly separated.
-However looking at histogram plots created by seaborn as sns , version 2 , the density plots of the petal width show there is a small overlapping between species setosa and versicolor. So overall petal length can be used to distinguish the species Setosa . Looking at the actual figures for petal length with regards Versicolor and Virginica species , the overlapping occurs at around 4.8 cm, but the majority of versicolor have petal length less than 4.8 whereas the majority of virginica have petal length greater than 4.8. Again because of the overlapping there is still a chance of misidentification.
+On examining version 1 Histograms ( created using matplotlib.pyplot )  you can conclude that there the variables Petal length can be used to distinguish the species Setosa clearly from the others species.
+However looking at histogram plots created by seaborn as sns , version 2 , the density plots of the petal width show there is a small overlapping between species setosa and versicolor. So overall petal length can be used to distinguish the species Setosa . Looking at the  figures on the x axis for petal length , Versicolor and Virginica species overlap  at around 4.8 cm, but the majority of versicolor have petal length less than 4.8 whereas the majority of virginica have petal length greater than 4.8. Again because of the overlapping there is still a chance of misidentification.
 
 
 
-**1.5.2 Multivariate Plots  :Scatter plot of each pair of variables** ** []**
+**1.5.2 Multivariate Plots  :Scatter plot of each pair of variables** ** [19]**
 
 **Import seaborn as sns**
 
@@ -291,5 +292,6 @@ But there is a slight overlapping between Versicolor and virginica observed.
 [17]https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
 [18]https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
 [19]https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+[20]https://towardsdatascience.com/beginners-guide-to-machine-learning-with-python-b9ff35bc9c51
 
 														 
