@@ -73,11 +73,8 @@ Python is the most popular, general purpose programming language suitable for a 
 
 Some advantages of using the Iris flower dataset is : 
 
-* Attributes are numeric 
-* It is a classification problem, allowing you to practice with perhaps an easier type of supervised learning algorithm.
+* Attributes are numeric and have the same units 
 * It only has 4 attributes and 150 rows, meaning it is small and easily fits into memory 
-
-* All of the numeric attributes are in the same units and the same scale, 
 
 **1.3 Download the data set and add it to a Repository**[1,6,7]
 
@@ -100,7 +97,6 @@ Some advantages of using the Iris flower dataset is :
 Descriptive statistics is describing and summarizing data through quantitative and visual approach. In terms of the Iris Flower Data set : 
 
 * The quantitative approach will use the python statistical library and Pandas. There are other libraries that can be utilised such as Numpy and Sci-py but for this project Pandas will be used. Pandas is based on Numpy and it looks at data though series or dataset objects. 
-* The visual approach will use Matplotlib.pyplot library which works well with the above libraries
 
 *  Using Pandas library , the function **describe()** is used to view statistical details like mean, std etc. for each variable in the dataset . I included **Perc** to give the percentiles and **include** to include all the data types.
 
@@ -130,6 +126,8 @@ Example of Output :
 
 
 * Using **print(df.head())** - Returns the first 5 rows of the dataframe ( however you can input any no. in the parenthesis not just  5)
+
+All summary results are outputted and saved to Summary.txt file in repository
     
 * To output the summary as a single text file , I used the following code : 
 					
@@ -137,12 +135,12 @@ The code below opens the file ( given  name in the parenthesis) and then pass th
 
 The output is printed  to a txt. file called "Summary File". 
 
-	df = open("Summary.txt", "w") print(desc,file = df) print(head,file = df) print(info,file = df)				
+					
 Input :				
 					df = open("Summary.txt", "w")
 					print(desc,file = df)
 					print(head,file = df)
-					print(info,file = df) 
+					print(info,file = df)
 					
 Output : " Summary file"
 
@@ -160,7 +158,7 @@ The range of results : Petal length data has the greatest range , difference bei
 **1.5.1 Univariate plots :Histogram of each variable ** [14,15,16,17,18]**
 
 
-Aim :To better understand each attribute.
+Aim :To better understand each attributes distribution through visualisation.
 
 For the IRIS dataset - we need the histogram to answer the following question :Which among the four variables is more useful than other variables in order to distinguish between the species of Iris flower ? 
 
@@ -232,7 +230,9 @@ An advantage to using Seaborn here is it uses alot less coding and interacts dir
 	
 Conclusion: 
 
-Examining version 1 Histograms ( created using matplotlib.pyplot )  you can conclude that there the variables Petal length and width data could be used to distinguish the species Setosa clearly from the others species. 
+To answer the question posed : Which variable is most useful in distinguishing between the species ?
+
+Well on examining version 1 Histograms ( created using matplotlib.pyplot )  you can conclude that there the variables Petal length and width data could be used to distinguish the species Setosa clearly from the others species with petal length the only variable that is completedly separated.
 However looking at histogram plots created by seaborn as sns , version 2 , the density plots of the petal width show there is a small overlapping between species setosa and versicolor. So overall petal length can be used to distinguish the species Setosa . Looking at the actual figures for petal length with regards Versicolor and Virginica species , the overlapping occurs at around 4.8 cm, but the majority of versicolor have petal length less than 4.8 whereas the majority of virginica have petal length greater than 4.8. Again because of the overlapping there is still a chance of misidentification.
 
 
